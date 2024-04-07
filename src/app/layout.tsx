@@ -1,13 +1,43 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '@/styles/globals.css';
+import { METADATA, PUBLIC_URL } from '@/const';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Title: Taskar - Your Trusted Online Pharmacy',
-  description:
-    'Taskar is your one-stop online destination for all your medication needs. Browse our wide selection of high-quality pharmaceutical products, conveniently delivered to your doorstep. Enjoy easy and secure shopping, coupled with exceptional customer service. Trust Taskar for all your healthcare essentials.',
+  metadataBase: new URL(PUBLIC_URL),
+  title: METADATA.title,
+  description: METADATA.description,
+  // keywords: METADATA.keywords,
+  authors: [{ name: METADATA.author }],
+  // manifest: METADATA.manifest,
+  icons: [
+    {
+      url: METADATA.apple_touch_icon,
+      type: 'apple-touch-icon',
+      sizes: '180x180',
+      rel: 'apple-touch-icon',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      url: METADATA.favicon_32x32,
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      url: METADATA.favicon_16x16,
+    },
+    { rel: 'icon', url: METADATA.icon },
+    { rel: 'manifest', url: METADATA.web_manifest },
+  ],
+  openGraph: {
+    title: METADATA.title,
+    description: METADATA.description,
+  },
 };
 
 export default function RootLayout({
