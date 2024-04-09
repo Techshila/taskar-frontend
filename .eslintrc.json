@@ -9,5 +9,5 @@
     "@next/next/no-async-client-component": "error",
     "react-hooks/exhaustive-deps": "error"
   },
-  "ignorePatterns": ["./src/components/ui"]
+  "ignorePatterns": ["/src/components/ui/"]
 }
