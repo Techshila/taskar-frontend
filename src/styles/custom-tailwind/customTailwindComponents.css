@@ -1,0 +1,52 @@
+@tailwind components;
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply py-2 px-4 rounded;
+  }
+
+  .bg-primary {
+    @apply bg-bg_primary;
+  }
+
+  .bg-secondary {
+    @apply bg-bg_secondary;
+  }
+
+  .btn-lg {
+    @apply p-2 px-6 rounded-lg xl:px-2;
+  }
+
+  /* Blue button */
+  .btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+
+  .btn-blue:hover {
+    @apply bg-blue-600;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply bg-gray-300 text-gray-800;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-gray-400;
+  }
+
+  /* #endregion button */
+
+  /* #region Flex box */
+
+  .flex-col-center {
+    @apply flex flex-col justify-center items-center;
+  }
+
+  .flex-row-center {
+    @apply flex flex-row justify-center items-center;
+  }
+
+  /* #endregion Flex box */
+}
