@@ -19,6 +19,11 @@ const config = {
     },
     extend: {
       colors: {
+        bg_primary: 'var(--bg-primary)',
+        bg_secondary: 'var(--bg-secondary)',
+        title: 'var(--title)',
+        text_primary: 'var(--text-secondary)',
+        text: 'var(--text-primary)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

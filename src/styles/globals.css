@@ -4,6 +4,14 @@
 
 @layer base {
   :root {
+    /* Custom color pallete start */
+    --bg-primary: #111d13;
+    --bg-secondary: #415d43;
+    --title: #709775;
+    --text-secondary: #8fb996;
+    --text-primary: #a1cca5;
+    /* Custom color pallete end */
+
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
 
@@ -65,4 +73,10 @@
     --ring: 216 12.2% 83.9%;
   }
 }
+
+body {
+  @apply bg-bg_primary;
+}
+
 @import '@/styles/custom-tailwind/customTailwindComponents.css';
+@import '@/styles/navbar.css';
