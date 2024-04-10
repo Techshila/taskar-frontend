@@ -26,3 +26,10 @@ export type _USER_DETAILS = {
   is_admin: boolean;
   is_superuser: boolean;
 };
+
+export type _CART_ITEM = {
+  image: string;
+  name: string;
+  count: number;
+  price: number;
+};
