@@ -5,7 +5,7 @@ import { _MEDICINE_DETAILS } from '@/types';
 
 export const getCandidates = async (medicineId: string) => {
   const response: AxiosResponse<_MEDICINE_DETAILS[]> = await basicAxios(
-    API_ENDPOINTS.MEDICINE_DETAIL(medicineId)
+    API_ENDPOINTS.get.MEDICINE_DETAIL(medicineId)
   );
   return response.data;
 };
