@@ -1,0 +1,7 @@
+.form-container {
+  @apply flex-col-center gap-6 w-full px-20;
+}
+
+.heading {
+  @apply text-4xl font-extrabold;
+}

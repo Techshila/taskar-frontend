@@ -1,6 +1,8 @@
 // Environment
 export const PUBLIC_URL = process.env.NEXT_PUBLIC_PUBLIC_URL as string;
 export const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL as string;
+export const GEOCODE_API = process.env.NEXT_PUBLIC_GEOCODE_API as string;
+export const GEOCODE_URL = process.env.NEXT_PUBLIC_GEOCODE_URL as string;
 
 // SEO
 export const METADATA = {

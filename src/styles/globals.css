@@ -75,8 +75,10 @@
 }
 
 body {
-  @apply bg-bg_primary;
+  @apply bg-white;
 }
 
 @import '@/styles/custom-tailwind/customTailwindComponents.css';
 @import '@/styles/navbar.css';
+@import '@/styles/formComponents.css';
+@import '@/styles/login.css';
