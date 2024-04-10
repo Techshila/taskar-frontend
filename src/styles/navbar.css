@@ -1,5 +1,5 @@
 .navbar_container {
-  @apply md:flex bg-bg_secondary mt-5 mx-5 rounded-xl  md:flex-row md:justify-between px-5 md:items-center py-2 font-medium text-white;
+  @apply md:flex bg-bg_secondary z-50 w-full rounded-xl  md:flex-row md:justify-between px-5 md:items-center py-2 font-medium text-white;
 }
 
 .navbar_logo {

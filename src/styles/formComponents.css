@@ -1,0 +1,15 @@
+.search {
+  @apply flex-row-center px-2 gap-4 mx-10 rounded-lg;
+}
+
+.search-input {
+  @apply h-10 placeholder:text-white text-white outline-none border-none w-full;
+}
+
+.login-label {
+  @apply block text-gray-700 font-semibold mb-2 text-3xl;
+}
+
+.login-input {
+  @apply appearance-none bg-transparent border-solid border-[1px] border-[#1A7AD9] placeholder:text-[#1A7AD9] placeholder:font-extralight text-[#1A7AD9] placeholder:italic gap-3 rounded-2xl my-2 p-4 text-2xl w-full focus:outline-none;
+}
