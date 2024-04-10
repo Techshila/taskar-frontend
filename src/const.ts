@@ -16,3 +16,8 @@ export const METADATA = {
   icon: `/favicon.ico`,
   apple_touch_icon: `/apple-touch-icon.png`,
 };
+
+export const SOCIAL_LINKS = {
+  insta_link: 'https://www.instagram.com/taskar',
+  email: 'taskar@gmail.com',
+};
