@@ -15,3 +15,14 @@ export type _MEDICINE_DETAILS = {
   image: string;
   stock: number;
 };
+
+export type _LOGIN_DATA = {
+  email: string;
+  password: string;
+};
+
+export type _USER_DETAILS = {
+  email: string;
+  is_admin: boolean;
+  is_superuser: boolean;
+};
