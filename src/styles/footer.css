@@ -1,0 +1,37 @@
+.footer_container {
+  @apply flex-col-center justify-around bg-bg_primary md:flex-row gap-10 md:gap-0 p-5 sm:p-10 py-20  text-white mt-10;
+}
+
+.footer_logo {
+  @apply flex flex-col items-center gap-2 text-title  md:w-1/3;
+}
+.footer_taskar {
+  @apply flex items-center gap-2 text-3xl  font-bold;
+}
+.footer_mdg_tagline {
+  @apply text-base font-semibold;
+}
+.footer_mdg_tagline:hover {
+  @apply text-blue-400;
+}
+
+.footer_info_container {
+  @apply flex justify-between sm:justify-around w-full md:w-2/3;
+}
+.footer_useful_link_container {
+  @apply flex flex-col gap-1 sm:gap-3 text-base  lg:text-lg font-semibold;
+}
+.footer_title {
+  @apply text-title;
+}
+
+.footer_social_container {
+  @apply flex-col-center items-start gap-3;
+}
+.footer_social_links {
+  @apply flex-row-center gap-2 sm:gap-5;
+}
+
+.footer_button {
+  @apply bg-title btn-lg font-semibold px-5;
+}
