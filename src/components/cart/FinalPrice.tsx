@@ -1,4 +1,39 @@
+'use client';
+
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { v4 as uuidv4 } from 'uuid';
+
 const FinalPrice = () => {
+  async function handleCheckout(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): Promise<void> {
+    const paymentId: string = uuidv4();
+    try {
+      await axios
+        .post('/api/proxy/', {
+          link_id: paymentId,
+          link_amount: 100,
+          link_currency: 'INR',
+          link_purpose: 'Payment for Taskar App',
+          customer_details: {
+            customer_phone: '8789686148',
+            customer_name: 'Test',
+            customer_email: 'test@gmail.com',
+          },
+          link_notify: {
+            send_sms: true,
+            send_email: false,
+          },
+          link_meta: { return_url: 'https://www.iitr.ac.in' },
+        })
+        .then((res) => {
+          console.log(res);
+          window.open(res.data.link_url, '_self');
+        });
+    } catch (error: any) {
+      toast.error('Something Wrong Occured! Please Try Again!');
+    }
+  }
+
   return (
     <section className='p-4 rounded-3xl bg-slate-100 md:w-1/3 h-fit'>
       <div>
@@ -25,7 +60,10 @@ const FinalPrice = () => {
             <p>Rs {'600.00'}</p>
           </div>
         </div>
-        <button className='text-white bg-black w-full text-lg py-3 text-center rounded-xl'>
+        <button
+          className='text-white bg-black w-full text-lg py-3 text-center rounded-xl'
+          onClick={handleCheckout}
+        >
           {' '}
           Continue to checkout
         </button>
