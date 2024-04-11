@@ -6,10 +6,8 @@ import logo from '@/assets/images/logo.png';
 import hamburger from '@/assets/icons/hamburger.svg';
 import { useState } from 'react';
 import Search from '@/assets/icons/search-icon.svg'
-import e from 'cors';
 import axios from 'axios';
-import { redirect } from 'next/dist/server/api-utils';
-
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
   const [SearchValue , setSearchValue] = useState("")
@@ -19,7 +17,7 @@ const Navbar = () => {
   };
 
   const handleSearch = ()=>{
-    redirect("/" , 'push')
+  Router.push()
 }
   const navLinks = [
     { label: 'Cart', link: '/cart' },
