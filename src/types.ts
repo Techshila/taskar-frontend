@@ -33,3 +33,8 @@ export type _CART_ITEM = {
   count: number;
   price: number;
 };
+
+export type _LOCATION = {
+  latitude: null | number;
+  longitude: null | number;
+};
