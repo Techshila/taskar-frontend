@@ -38,3 +38,8 @@ export type _LOCATION = {
   latitude: null | number;
   longitude: null | number;
 };
+
+export type _REVIEW = {
+  rating: number;
+  reviews: string;
+};
