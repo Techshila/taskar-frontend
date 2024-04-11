@@ -54,4 +54,23 @@ export type _SIGNUP_FORM = {
   firstName: string;
   lastName: string;
   email: string;
+  username: string;
+  password: string;
+  phoneNumber: string;
+};
+
+export type _ADDRESS = {
+  street: string;
+  city: string;
+  state: string;
+  pinCode: number;
+  location: {
+    type: 'Point';
+    coordinates: [number, number];
+  };
+  defaultAddress: boolean;
+};
+
+export type _UPDATE_ADDRESS = {
+  addresses: _ADDRESS[];
 };

@@ -9,12 +9,15 @@ const API_ENDPOINTS = {
     SHOW_CART: '/user/cartshow/',
     ADD_TO_CART: '/user/cart/',
     HOME_MEDICINE: '/home/',
+    SEARCH: (name: string) => `/search/${encodeURIComponent(name)}`,
+    GET_ADDRESS: '/address/',
   },
   post: {
-    SIGNUP: '/user/signup/',
+    SIGNUP: '/user/registerUser/',
     LOGIN: '/user/login/',
     LOGOUT: '/user/logOut/',
     REVIEW: (id: string) => `/user/createreview/${id}`,
+    UPDATE_ADDRESS: '/address/',
   },
 };
 
