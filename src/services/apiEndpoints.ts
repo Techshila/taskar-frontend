@@ -8,11 +8,12 @@ const API_ENDPOINTS = {
     MEDICINE_DETAIL: (id: string) => `/medicine/${id}`,
     SHOW_CART: '/user/cartshow/',
     ADD_TO_CART: '/user/cart/',
+    HOME_MEDICINE: '/home/',
   },
   post: {
-    SIGNUP: '}/user/registerUser',
-    LOGIN: '/auth/login/',
-    LOGOUT: '/auth/logout/',
+    SIGNUP: '/user/signup/',
+    LOGIN: '/user/login/',
+    LOGOUT: '/user/logOut/',
     REVIEW: (id: string) => `/user/createreview/${id}`,
   },
 };

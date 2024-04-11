@@ -43,3 +43,15 @@ export type _REVIEW = {
   rating: number;
   reviews: string;
 };
+
+export type _LOGIN_FORM = {
+  email: string;
+  password: string;
+  username: string;
+};
+
+export type _SIGNUP_FORM = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
