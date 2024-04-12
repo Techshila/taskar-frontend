@@ -96,3 +96,11 @@ export type _ADDRESS = {
 export type _UPDATE_ADDRESS = {
   addresses: _ADDRESS[];
 };
+
+export type _TRANSACTION = {
+  buyer : string , 
+  order : _ORDER , 
+  paymentId : string , 
+  item : _MEDICINE ,
+
+}
