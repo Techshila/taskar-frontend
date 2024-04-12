@@ -4,11 +4,20 @@
  */
 
 const API_ENDPOINTS = {
-  get: { MEDICINE_DETAIL: (id: string) => `/medicine/${id}` },
+  get: {
+    MEDICINE_DETAIL: (id: string) => `/medicine/${id}`,
+    SHOW_CART: '/user/cartshow/',
+    ADD_TO_CART: '/user/cart/',
+    HOME_MEDICINE: '/home/',
+    SEARCH: (name: string) => `/search/${encodeURIComponent(name)}`,
+    GET_ADDRESS: '/address/',
+  },
   post: {
-    SIGNUP: '}/user/registerUser',
-    LOGIN: '/auth/login/',
-    LOGOUT: '/auth/logout/',
+    SIGNUP: '/user/registerUser/',
+    LOGIN: '/user/login/',
+    LOGOUT: '/user/logOut/',
+    REVIEW: (id: string) => `/user/createreview/${id}`,
+    UPDATE_ADDRESS: '/address/',
   },
 };
 

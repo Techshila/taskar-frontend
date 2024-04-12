@@ -4,9 +4,12 @@ import API_ENDPOINTS from '@/services/apiEndpoints';
 import { basicAxios } from '@/services/basicAxios';
 
 export async function login(userData: _LOGIN_DATA) {
-  const response: AxiosResponse = await basicAxios(API_ENDPOINTS. post.LOGIN, {
+  const response: AxiosResponse = await basicAxios(API_ENDPOINTS.post.LOGIN, {
     method: 'POST',
     data: userData,
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
   });
   return response.data;
 }

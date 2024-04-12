@@ -19,7 +19,6 @@ export const options = {
         }
       },
     }),
-    
   ],
   pages: {
     signIn: '/login',
@@ -28,7 +27,7 @@ export const options = {
     callbacks: {
       async jwt({ token, user }) {
         if (user) token.role = user.role;
-        console.log("hiiii")
+        console.log('hiiii');
         return token;
       },
       async session({ session, token }) {

@@ -1,5 +1,5 @@
 .navbar_container {
-  @apply md:flex bg-bg_secondary z-50 w-full rounded-xl  md:flex-row md:justify-between px-5 md:items-center py-2 font-medium text-white;
+  @apply md:flex bg-bg_secondary z-50 w-full md:flex-row md:justify-between px-5 md:items-center py-2 font-medium text-white;
 }
 
 .navbar_logo {
@@ -15,9 +15,9 @@
 }
 
 .navbar_links:hover {
-  @apply text-green-800;
+  @apply text-green-200;
 }
 
 .navbar_button {
-  @apply bg-green-800 btn-lg px-5;
+  @apply bg-green-200 btn-lg px-5;
 }
