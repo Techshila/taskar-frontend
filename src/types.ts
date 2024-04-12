@@ -21,10 +21,13 @@ export type _LOGIN_DATA = {
   password: string;
 };
 
-export type _USER_DETAILS = {
+export type _USER_REGISTER_FORM = {
+  firstName: string;
+  lastName: string;
+  username: string;
   email: string;
-  is_admin: boolean;
-  is_superuser: boolean;
+  password: string;
+  phoneNumber: number;
 };
 
 export type _CART_ITEM = {

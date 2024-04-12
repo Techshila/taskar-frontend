@@ -11,5 +11,5 @@ export async function login(userData: _LOGIN_DATA) {
       'Content-Type': 'multipart/form-data',
     },
   });
-  return response.data;
+  return response.data.data;
 }

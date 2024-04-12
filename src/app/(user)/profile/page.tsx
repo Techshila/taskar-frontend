@@ -15,7 +15,8 @@ const Member = async () => {
     .map((address) => address)
     .filter((address) => {
       if (address.defaultAddress) {
-        defaultAddress = address.street + ', ' + address.city + ', ' + address.state + ' - ' + address.pinCode;
+        defaultAddress =
+          address.street + ', ' + address.city + ', ' + address.state + ' - ' + address.pinCode;
       }
     })[0];
 
@@ -40,20 +41,31 @@ const Member = async () => {
           <div className='text-xl text-green-600'>&nbsp;(@{USER.username})</div>
         </div>
         <div className='text-xl flex justify-center py-1'>
-          <div className='text-green-700 font-bold'>Role:&nbsp;</div> <div className='text-green-600'>{USER.isCEO ? 'CEO' : USER.isStoreManager ? 'Store Manager' : 'User'}</div>
+          <div className='text-green-700 font-bold'>Role:&nbsp;</div>{' '}
+          <div className='text-green-600'>
+            {USER.isCEO ? 'CEO' : USER.isStoreManager ? 'Store Manager' : 'User'}
+          </div>
         </div>
         <div className='flex text-lg py-3 justify-between'>
-          <div className='flex'><div className='text-green-700 font-bold'>Email Address:&nbsp;</div>  <div className='text-green-600'>{USER.email}</div></div>
-          <div className='flex'><div className='text-green-700 font-bold'>Phone No:&nbsp;</div>  <div className='text-green-600'>{USER.phoneNumber}</div></div>
+          <div className='flex'>
+            <div className='text-green-700 font-bold'>Email Address:&nbsp;</div>{' '}
+            <div className='text-green-600'>{USER.email}</div>
+          </div>
+          <div className='flex'>
+            <div className='text-green-700 font-bold'>Phone No:&nbsp;</div>{' '}
+            <div className='text-green-600'>{USER.phoneNumber}</div>
+          </div>
         </div>
         <div className='text-lg py-3 flex'>
-        <div className='text-green-700 font-bold'>Default Address: &nbsp;</div> <div className='text-green-600'>{defaultAddress !== '' ? defaultAddress : 'No Default Address Found'}</div>
+          <div className='text-green-700 font-bold'>Default Address: &nbsp;</div>{' '}
+          <div className='text-green-600'>
+            {defaultAddress !== '' ? defaultAddress : 'No Default Address Found'}
+          </div>
         </div>
         <div className='text-lg py-3'>
-        <div className='text-green-700 font-bold'>
-          Other Addresses:</div>
+          <div className='text-green-700 font-bold'>Other Addresses:</div>
           <ul>
-            {otherAddresses.map((address: _ADDRESS, index:number) => {
+            {otherAddresses.map((address: _ADDRESS, index: number) => {
               return (
                 <li className='py-1 text-green-600' key={index}>
                   &nbsp;&nbsp;&nbsp;&nbsp;

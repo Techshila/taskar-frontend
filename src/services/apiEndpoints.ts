@@ -14,7 +14,7 @@ const API_ENDPOINTS = {
   },
   post: {
     SIGNUP: '/user/registerUser/',
-    LOGIN: '/user/login/',
+    LOGIN: '/user/logInUser/',
     LOGOUT: '/user/logOut/',
     REVIEW: (id: string) => `/user/createreview/${id}`,
     UPDATE_ADDRESS: '/address/',
