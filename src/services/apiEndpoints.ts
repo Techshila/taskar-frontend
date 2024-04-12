@@ -6,7 +6,7 @@
 const API_ENDPOINTS = {
   get: { MEDICINE_DETAIL: (id: string) => `/medicine/${id}` },
   post: {
-    SIGNUP: '/auth/signup/',
+    SIGNUP: '}/user/registerUser',
     LOGIN: '/auth/login/',
     LOGOUT: '/auth/logout/',
   },

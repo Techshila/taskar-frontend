@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import AuthLayout from '@/components/auth-layout/AuthLayout';
 
 const SignupForm = () => {
+  const [first, setFirst] = useState('');
+  const [last, setLast] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -14,6 +16,12 @@ const SignupForm = () => {
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+  };
+  const handleFirst = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFirst(e.target.value);
+  };
+  const handleLast = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLast(e.target.value);
   };
   const handlePass = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
@@ -24,9 +32,23 @@ const SignupForm = () => {
 
   const handleSignin = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    const userData: _LOGIN_DATA = {
+    const userData: {
+      firstname:string;
+      lastname:string;
+      username : string;
+      email: string;
+    password: string;
+    phoneNumber : Number ;
+
+
+    } = {
+      firstname : first , 
+      lastname : last,
+      username : "store9_" , 
       email: email,
       password: password,
+      phoneNumber : 99192,
+
     };
     if (password != passwordConfirm) {
       setPasswordError('Password and Confirm Password should be same');
@@ -41,6 +63,33 @@ const SignupForm = () => {
       <div className='form-container'>
         <p className='heading'>Register your Account!</p>
         <form>
+        <label htmlFor='firstName' className='login-label'>
+            First Name
+          </label>
+          <input
+            type='text'
+            id='firstName'
+            name='firstName'
+            placeholder='First Name'
+            required
+            className='login-input mb-4'
+            onChange={handleFirst}
+          />
+        <label htmlFor='LastName' className='login-label'>
+            Last Name
+          </label>
+          <input
+            type='text'
+            id='LastName'
+            name='LastName'
+            placeholder='Last Name'
+            required
+            className='login-input mb-4'
+            onChange={handleLast}
+          />
+
+
+
           <label htmlFor='email' className='login-label'>
             Email Id
           </label>
@@ -48,6 +97,7 @@ const SignupForm = () => {
             type='email'
             id='email'
             name='email'
+            value={email}
             placeholder='Enter you email id'
             required
             className='login-input mb-4'
@@ -72,6 +122,7 @@ const SignupForm = () => {
             type='password'
             id='password'
             name='password'
+            
             placeholder='Enter you Confirm Password'
             required
             className='login-input mb-6'
