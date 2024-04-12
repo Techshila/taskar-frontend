@@ -1,14 +1,16 @@
 'use client';
 import { signup } from '@/services/api/auth/signup';
-import { _LOGIN_DATA } from '@/types';
+import { _LOGIN_DATA, _USER_REGISTER_FORM } from '@/types';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AuthLayout from '@/components/auth-layout/AuthLayout';
+import toast from 'react-hot-toast';
 
 const SignupForm = () => {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState(0);
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -29,30 +31,31 @@ const SignupForm = () => {
   const handlePassConfrm = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPasswordConfirm(e.target.value);
   };
+  const handlePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(parseInt(e.target.value));
+  };
 
   const handleSignin = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    const userData: {
-      firstname: string;
-      lastname: string;
-      username: string;
-      email: string;
-      password: string;
-      phoneNumber: Number;
-    } = {
-      firstname: first,
-      lastname: last,
-      username: 'store9_',
+    const userData: _USER_REGISTER_FORM = {
+      firstName: first,
+      lastName: last,
+      username: first + last,
       email: email,
       password: password,
-      phoneNumber: 99192,
+      phoneNumber: phone,
     };
     if (password != passwordConfirm) {
       setPasswordError('Password and Confirm Password should be same');
       return;
     }
-    await signup(userData);
-    router.push('/login');
+    try {
+      await signup(userData);
+      toast.success('Account Created Successfully');
+      router.replace('/login');
+    } catch (error) {
+      toast.error('Something went wrong');
+    }
   };
 
   return (
@@ -98,6 +101,20 @@ const SignupForm = () => {
             className='login-input mb-4'
             onChange={handleEmail}
           />
+          <label htmlFor='phone' className='login-label'>
+            Phone number
+          </label>
+          <input
+            type='number'
+            id='phone'
+            name='phone'
+            value={phone}
+            placeholder='Enter you phone number'
+            required
+            className='login-input mb-4'
+            onChange={handlePhone}
+          />
+
           <label htmlFor='password' className='login-label'>
             Password
           </label>
@@ -110,13 +127,13 @@ const SignupForm = () => {
             className='login-input mb-6'
             onChange={handlePass}
           />
-          <label htmlFor='password' className='login-label'>
+          <label htmlFor='cpassword' className='login-label'>
             Confirm Password
           </label>
           <input
-            type='password'
-            id='password'
-            name='password'
+            type='cpassword'
+            id='cpassword'
+            name='cpassword'
             placeholder='Enter you Confirm Password'
             required
             className='login-input mb-6'
