@@ -18,6 +18,6 @@ export const METADATA = {
 };
 
 export const SOCIAL_LINKS = {
-  insta_link: 'https://www.instagram.com/taskar',
+  insta_link: 'https://www.instagram.com/taskarhealthcaremall',
   email: 'taskar@gmail.com',
 };

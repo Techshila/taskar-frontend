@@ -26,6 +26,7 @@ const LoginForm = () => {
     };
     try {
       await login(userData);
+
       router.push('/');
     } catch (e) {
       console.log('error occurred', e);
