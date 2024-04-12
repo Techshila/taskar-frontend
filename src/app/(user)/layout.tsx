@@ -6,9 +6,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <AuthRequired>
+        <div className='flex flex-col min-h-screen'>
         <Navbar />
         {children}
-        <Footer />
+        <div className='mt-auto'><Footer /></div>
+        </div>
       </AuthRequired>
     </div>
   );

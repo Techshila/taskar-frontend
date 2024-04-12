@@ -2,8 +2,8 @@ import { _ADDRESS, _CART_ITEM, _MEDICINE, _ORDER, _USER, _TRANSACTION } from '@/
 
 export const MEDICINE: _MEDICINE = {
   id: 123,
-  image:
-    'https://images.unsplash.com/photo-1618120508902-c8d05e7985ee?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  displayImages:
+    ['https://images.unsplash.com/photo-1618120508902-c8d05e7985ee?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
   name: 'Pure Vitamin-C Serum',
   category: 'Vitamin',
   price: 988,
@@ -53,7 +53,7 @@ const THIRD_ADDRESS: _ADDRESS = {
   },
 };
 
-export const USER: _USER = {
+export const USER: _USER & {avatar:string} = {
   firstName: 'John',
   lastName: 'Doe',
   username: 'johnDoe',
@@ -81,8 +81,8 @@ export const TRANSACTION: _TRANSACTION = {
 
   item: {
     id: 123,
-    image:
-      'https://images.unsplash.com/photo-1618120508902-c8d05e7985ee?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    displayImages:
+      ['https://images.unsplash.com/photo-1618120508902-c8d05e7985ee?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     name: 'Pure Vitamin-C Serum',
     category: 'Vitamin',
     price: 988,

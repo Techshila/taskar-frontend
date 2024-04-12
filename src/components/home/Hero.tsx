@@ -9,7 +9,7 @@ const HeroSection = () => {
     'https://images.unsplash.com/photo-1579684385127-1ef15d508118',
   ];
   return (
-    <ImagesSlider className='h-screen rounded-lg' images={images}>
+    <ImagesSlider className='h-screen rounded-b-3xl' images={images}>
       <motion.div
         initial={{
           opacity: 0,

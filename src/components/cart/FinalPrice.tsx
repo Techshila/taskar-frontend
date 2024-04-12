@@ -1,17 +1,41 @@
 'use client';
 
+import { BACKEND_URL } from '@/const';
+import API_ENDPOINTS from '@/services/apiEndpoints';
+import { _CART_NEW } from '@/types';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 import toast from 'react-hot-toast';
 import { v4 as uuidv4 } from 'uuid';
 
 const FinalPrice = () => {
+  const [cart,setCart] = useState<_CART_NEW>({} as _CART_NEW);
+  const [cookies] = useCookies(['token']);
+
+    useEffect(() => {
+      try {
+        axios.get(`
+      ${BACKEND_URL+API_ENDPOINTS.get.SHOW_CART}`,{
+        headers: {
+          Authorization: `Bearer ${cookies.token}`,
+        }
+      }
+    ).then((res) => {
+      setCart(res.data.data);
+      
+    })
+      } catch (error) {
+        
+      }
+    },[cart])
   async function handleCheckout(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): Promise<void> {
     const paymentId: string = uuidv4();
     try {
       await axios
         .post('/api/proxy/', {
           link_id: paymentId,
-          link_amount: 100,
+          link_amount: cart.totalmoney,
           link_currency: 'INR',
           link_purpose: 'Payment for Taskar App',
           customer_details: {
@@ -23,10 +47,9 @@ const FinalPrice = () => {
             send_sms: true,
             send_email: false,
           },
-          link_meta: { return_url: 'https://www.iitr.ac.in' },
+          link_meta: { return_url: 'http://localhost:3000' },
         })
         .then((res) => {
-          console.log(res);
           window.open(res.data.link_url, '_self');
         });
     } catch (error: any) {
@@ -49,15 +72,15 @@ const FinalPrice = () => {
         <div className='flex flex-col gap-3 px-2 my-4 text-slate-500 text-lg'>
           <div className='flex flex-row justify-between'>
             <h1>Subtotal</h1>
-            <p>{'678.99'}</p>
+            <p>{cart.totalmoney}</p>
           </div>
           <div className='flex flex-row justify-between'>
             <h1>Discount</h1>
-            <p>-{'78.99'}</p>
+            <p>-{'00.00'}</p>
           </div>
           <div className='flex flex-row justify-between text-black font-semibold'>
             <h1>Subtotal</h1>
-            <p>Rs {'600.00'}</p>
+            <p>Rs {cart.totalmoney}</p>
           </div>
         </div>
         <button

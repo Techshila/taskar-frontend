@@ -18,6 +18,7 @@ const API_ENDPOINTS = {
     LOGOUT: '/user/logOut/',
     REVIEW: (id: string) => `/user/createreview/${id}`,
     UPDATE_ADDRESS: '/address/',
+    GET_USER: '/user/updateUser'
   },
 };
 

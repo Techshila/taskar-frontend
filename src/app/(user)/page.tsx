@@ -1,24 +1,44 @@
+"use client"
 import HeroSection from '@/components/home/Hero';
 import MedicineCard from '@/components/medicine/MedicineCard';
-import { homePageMedicines } from '@/services/api/medicine/homemedicine';
+import { BACKEND_URL } from '@/const';
+import API_ENDPOINTS from '@/services/apiEndpoints';
 import { _MEDICINE } from '@/types';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 
-const Home = async () => {
-  const medicines = await homePageMedicines();
-  console.log(medicines);
+const Home = () => {
+  const [medicines, setMedicines] = useState([]);
+  const [cookies] = useCookies(['token']);
+  useEffect(() => {
+    try {
+      axios.get(`
+    ${BACKEND_URL+API_ENDPOINTS.get.HOME_MEDICINE}`,{
+      headers: {
+        Authorization: `Bearer ${cookies.token}`,
+      }
+    }
+  ).then((res) => {
+    setMedicines(res.data.data);
+  })
+    } catch (error) {
+      
+    }
+  },[])
   return (
     <div className='flex flex-col justify-start'>
       <div>
         <HeroSection />
       </div>
-      <div className='flex flex-row w-screen justify-center sm:justify-start items-center mx-5 mt-5 flex-wrap gap-4'>
-        {medicines.map((medicine: any, index: number) => {
+      <div className='flex flex-row w-screen justify-center sm:justify-around items-center px-5 mt-5 flex-wrap gap-10 sm:gap-5'>
+        {medicines.map((medicine: _MEDICINE, index: number) => {
           const medi: _MEDICINE = {
-            id: index,
-            name: medicine[0],
-            price: medicine[2],
-            image: medicine[3][0],
-            category: medicine[1],
+            id: medicine.id,
+            name: medicine.name,
+            price: medicine.price,
+            displayImages: medicine.displayImages,
+            category: medicine.category,
           };
           return <MedicineCard key={index} medicine={medi} />;
         })}

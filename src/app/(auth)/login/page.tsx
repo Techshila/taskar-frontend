@@ -1,6 +1,7 @@
 'use client';
 import AuthLayout from '@/components/auth-layout/AuthLayout';
 import { login } from '@/services/api/auth/login';
+import useUserStore from '@/stores/userStore';
 import { _LOGIN_DATA } from '@/types';
 import { readToken } from '@/utils/api';
 import Link from 'next/link';
@@ -10,8 +11,9 @@ import { useCookies } from 'react-cookie';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
+  const setUser = useUserStore((state) => state.setUser);
   const [password, setPassword] = useState('');
-  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const [cookies, setCookie] = useCookies(['token']);
   const router = useRouter();
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +31,7 @@ const LoginForm = () => {
     };
     try {
       const res = await login(userData);
+      setUser(res);
       setCookie('token', res.accessToken);
       if (res.accessToken) {
         router.push('/');

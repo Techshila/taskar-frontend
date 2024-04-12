@@ -1,6 +1,6 @@
 export type _MEDICINE = {
   id: number;
-  image: string;
+  displayImages: [string];
   name: string;
   category: string;
   price: number;
@@ -9,11 +9,10 @@ export type _MEDICINE = {
 export type _MEDICINE_DETAILS = {
   id: number;
   name: string;
-  category: string;
+  categories: [string];
   price: number;
   description: string;
-  image: string;
-  stock: number;
+  displayImages: [string];
 };
 
 export type _LOGIN_DATA = {
@@ -58,7 +57,6 @@ export type _USER = {
   addresses: _ADDRESS[];
   isStoreManager: boolean;
   isCEO: boolean;
-  avatar: string;
 };
 
 export type _REVIEW = {
@@ -103,3 +101,15 @@ export type _TRANSACTION = {
   paymentId: string;
   item: _MEDICINE;
 };
+
+
+
+export type _CART_NEW = {
+  "mediids": [string],
+"medinames": [string],
+"price": [string],
+"qts": [number],
+"userId": string,
+"totalcnt": number,
+"totalmoney": number
+}

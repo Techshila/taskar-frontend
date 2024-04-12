@@ -3,7 +3,6 @@ import { _USER_REGISTER_FORM } from '@/types';
 import type { AxiosResponse } from 'axios';
 import { basicAxios } from '@/services/basicAxios';
 export async function signup(userData: _USER_REGISTER_FORM) {
-  console.log(userData);
   const response: AxiosResponse = await basicAxios(API_ENDPOINTS.post.SIGNUP, {
     method: 'POST',
     data: userData,

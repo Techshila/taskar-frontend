@@ -1,14 +1,14 @@
 import API_ENDPOINTS from '@/services/apiEndpoints';
 import { basicAxios } from '@/services/basicAxios';
-import { readToken } from '@/utils/api';
-import { getCookies } from '@/utils/serverapi';
 import type { AxiosResponse } from 'axios';
+import { useCookies } from 'react-cookie';
 
 export const homePageMedicines = async () => {
+  const [cookies] = useCookies(['token']);
   const options = {
     withCredentials: true,
     headers: {
-      Authorization: `Bearer ${getCookies({ key: 'token' })}`,
+      Authorization: `Bearer ${cookies}`,
     },
   };
   const response: AxiosResponse = await basicAxios(API_ENDPOINTS.get.HOME_MEDICINE, options);
