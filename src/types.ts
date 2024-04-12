@@ -38,3 +38,23 @@ export type _LOCATION = {
   latitude: null | number;
   longitude: null | number;
 };
+
+export type _USER = {
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+  phoneNumber: number;
+  addresses:_ADDRESS[];
+  isStoreManager: boolean;
+  isCEO: boolean;
+  avatar: string;
+};
+
+export type _ADDRESS={
+  street: string;
+  city: string;
+  state: string;
+  pinCode: number;
+  defaultaddress: boolean;
+}
