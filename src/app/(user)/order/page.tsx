@@ -1,6 +1,7 @@
 import OrderCard from '@/components/order/OrderCard';
-import { ORDER } from '@/utils/dummyData';
+import { ORDER  , TRANSACTION} from '@/utils/dummyData';
 
+import OrderDetails from '@/components/order/OrderDetails';
 const OrderPage = () => {
   return (
     <div className='my-5 flex-col justify-center'>
@@ -9,6 +10,7 @@ const OrderPage = () => {
         <OrderCard order={ORDER} />
         <OrderCard order={ORDER} />
       </div>
+      <OrderDetails transaction={TRANSACTION}/>
     </div>
   );
 };
