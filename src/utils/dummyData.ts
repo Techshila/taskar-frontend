@@ -25,8 +25,8 @@ const DEFAULT_ADDRESS: _ADDRESS = {
   defaultAddress: true,
   location: {
     type: 'Point',
-    coordinates: [100,34]
-  }
+    coordinates: [100, 34],
+  },
 };
 
 const SECOND_ADDRESS: _ADDRESS = {
@@ -37,8 +37,8 @@ const SECOND_ADDRESS: _ADDRESS = {
   defaultAddress: false,
   location: {
     type: 'Point',
-    coordinates: [234,89]
-  }
+    coordinates: [234, 89],
+  },
 };
 
 const THIRD_ADDRESS: _ADDRESS = {
@@ -49,8 +49,8 @@ const THIRD_ADDRESS: _ADDRESS = {
   defaultAddress: false,
   location: {
     type: 'Point',
-    coordinates: [122,90]
-  }
+    coordinates: [122, 90],
+  },
 };
 
 export const USER: _USER = {
@@ -59,7 +59,7 @@ export const USER: _USER = {
   username: 'johnDoe',
   email: 'test@gmail.com',
   phoneNumber: 1234567890,
-  addresses: [DEFAULT_ADDRESS, SECOND_ADDRESS, THIRD_ADDRESS  ],
+  addresses: [DEFAULT_ADDRESS, SECOND_ADDRESS, THIRD_ADDRESS],
   isStoreManager: false,
   isCEO: false,
   avatar: 'https://res.cloudinary.com/cinespace/image/upload/v1694361563/lhcq38zfjhqdityek6pc.png',

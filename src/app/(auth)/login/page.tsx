@@ -2,13 +2,16 @@
 import AuthLayout from '@/components/auth-layout/AuthLayout';
 import { login } from '@/services/api/auth/login';
 import { _LOGIN_DATA } from '@/types';
+import { readToken } from '@/utils/api';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const router = useRouter();
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,9 +28,11 @@ const LoginForm = () => {
       password: password,
     };
     try {
-      await login(userData);
-
-      router.push('/');
+      const res = await login(userData);
+      setCookie('token', res.accessToken);
+      if (res.accessToken) {
+        router.push('/');
+      }
     } catch (e) {
       console.log('error occurred', e);
     }
