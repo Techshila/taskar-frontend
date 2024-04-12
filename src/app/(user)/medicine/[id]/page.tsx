@@ -1,4 +1,4 @@
-const MedicinePage = async ({ params }: { params: { id: string } }) => {
+const MedicinePage = async ({ params }: { params: { id: number } }) => {
   const medicineId = params.id;
   // const medicineDetails = await getMedicineDetails(medicineId);
   return (

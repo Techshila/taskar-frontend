@@ -1,14 +1,15 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { AuthRequired } from '@/components/auth-layout/AuthRequired';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className='flex flex-col justify-between min-h-screen'>
-      <div>
+    <div>
+      <AuthRequired>
         <Navbar />
         {children}
-      </div>
-      <Footer />
+        <Footer />
+      </AuthRequired>
     </div>
   );
 }
