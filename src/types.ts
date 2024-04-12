@@ -98,9 +98,8 @@ export type _UPDATE_ADDRESS = {
 };
 
 export type _TRANSACTION = {
-  buyer : string , 
-  order : _ORDER , 
-  paymentId : string , 
-  item : _MEDICINE ,
-
-}
+  buyer: string;
+  order: _ORDER;
+  paymentId: string;
+  item: _MEDICINE;
+};

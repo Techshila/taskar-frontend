@@ -1,5 +1,5 @@
 import OrderCard from '@/components/order/OrderCard';
-import { ORDER  , TRANSACTION} from '@/utils/dummyData';
+import { ORDER, TRANSACTION } from '@/utils/dummyData';
 
 import OrderDetails from '@/components/order/OrderDetails';
 const OrderPage = () => {
@@ -10,7 +10,7 @@ const OrderPage = () => {
         <OrderCard order={ORDER} />
         <OrderCard order={ORDER} />
       </div>
-      <OrderDetails transaction={TRANSACTION}/>
+      <OrderDetails transaction={TRANSACTION} />
     </div>
   );
 };
