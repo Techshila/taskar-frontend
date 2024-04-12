@@ -46,6 +46,18 @@ export type _ORDER = {
   status: string;
 };
 
+export type _USER = {
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+  phoneNumber: number;
+  addresses: _ADDRESS[];
+  isStoreManager: boolean;
+  isCEO: boolean;
+  avatar: string;
+};
+
 export type _REVIEW = {
   rating: number;
   reviews: string;
