@@ -51,10 +51,38 @@ export type _USER = {
   avatar: string;
 };
 
-export type _ADDRESS={
+export type _REVIEW = {
+  rating: number;
+  reviews: string;
+};
+
+export type _LOGIN_FORM = {
+  email: string;
+  password: string;
+  username: string;
+};
+
+export type _SIGNUP_FORM = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  username: string;
+  password: string;
+  phoneNumber: string;
+};
+
+export type _ADDRESS = {
   street: string;
   city: string;
   state: string;
   pinCode: number;
-  defaultaddress: boolean;
-}
+  location: {
+    type: 'Point';
+    coordinates: [number, number];
+  };
+  defaultAddress: boolean;
+};
+
+export type _UPDATE_ADDRESS = {
+  addresses: _ADDRESS[];
+};

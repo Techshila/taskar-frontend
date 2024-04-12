@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +26,7 @@ const LoginForm = () => {
     };
     try {
       await login(userData);
-      
+
       router.push('/');
     } catch (e) {
       console.log('error occurred', e);
@@ -80,5 +79,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
-

@@ -3,13 +3,13 @@ import { basicAxios } from '@/services/basicAxios';
 import { readToken } from '@/utils/api';
 import type { AxiosResponse } from 'axios';
 
-export const logout = async () => {
+export const homePageMedicines = async () => {
   const options = {
     withCredentials: true,
     headers: {
       Authorization: `Bearer ${readToken()}`,
     },
   };
-  const response: AxiosResponse<string> = await basicAxios(API_ENDPOINTS.post.LOGOUT, options);
+  const response: AxiosResponse<string> = await basicAxios(API_ENDPOINTS.get.HOME_MEDICINE, options);
   return response.data;
 };

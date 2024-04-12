@@ -7,19 +7,19 @@ import { _ADDRESS } from '@/types';
 const Member = async () => {
   const session = await getServerSession(options);
 
-  // if (!session) {
-  //   redirect('/api/auth/signin?callbackUrl=/User');
-  // }
+  if (!session) {
+    redirect('/api/auth/signin?callbackUrl=/User');
+  }
   let defaultAddress: string = '';
   USER.addresses
     .map((address) => address)
     .filter((address) => {
-      if (address.defaultaddress) {
+      if (address.defaultAddress) {
         defaultAddress = address.street + ', ' + address.city + ', ' + address.state + ' - ' + address.pinCode;
       }
     })[0];
 
-  const otherAddresses = USER.addresses.filter((address) => !address.defaultaddress);
+  const otherAddresses = USER.addresses.filter((address) => !address.defaultAddress);
 
   return (
     //   <div>

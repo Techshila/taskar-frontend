@@ -33,22 +33,19 @@ const SignupForm = () => {
   const handleSignin = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     const userData: {
-      firstname:string;
-      lastname:string;
-      username : string;
+      firstname: string;
+      lastname: string;
+      username: string;
       email: string;
-    password: string;
-    phoneNumber : Number ;
-
-
+      password: string;
+      phoneNumber: Number;
     } = {
-      firstname : first , 
-      lastname : last,
-      username : "store9_" , 
+      firstname: first,
+      lastname: last,
+      username: 'store9_',
       email: email,
       password: password,
-      phoneNumber : 99192,
-
+      phoneNumber: 99192,
     };
     if (password != passwordConfirm) {
       setPasswordError('Password and Confirm Password should be same');
@@ -63,7 +60,7 @@ const SignupForm = () => {
       <div className='form-container'>
         <p className='heading'>Register your Account!</p>
         <form>
-        <label htmlFor='firstName' className='login-label'>
+          <label htmlFor='firstName' className='login-label'>
             First Name
           </label>
           <input
@@ -75,7 +72,7 @@ const SignupForm = () => {
             className='login-input mb-4'
             onChange={handleFirst}
           />
-        <label htmlFor='LastName' className='login-label'>
+          <label htmlFor='LastName' className='login-label'>
             Last Name
           </label>
           <input
@@ -87,8 +84,6 @@ const SignupForm = () => {
             className='login-input mb-4'
             onChange={handleLast}
           />
-
-
 
           <label htmlFor='email' className='login-label'>
             Email Id
@@ -122,7 +117,6 @@ const SignupForm = () => {
             type='password'
             id='password'
             name='password'
-            
             placeholder='Enter you Confirm Password'
             required
             className='login-input mb-6'

@@ -22,7 +22,11 @@ const DEFAULT_ADDRESS: _ADDRESS = {
   city: 'Manali',
   state: 'Himachal Pradesh',
   pinCode: 185131,
-  defaultaddress: true,
+  defaultAddress: true,
+  location: {
+    type: 'Point',
+    coordinates: [100,34]
+  }
 };
 
 const SECOND_ADDRESS: _ADDRESS = {
@@ -30,7 +34,11 @@ const SECOND_ADDRESS: _ADDRESS = {
   city: 'Shimla',
   state: 'Himachal Pradesh',
   pinCode: 175131,
-  defaultaddress: false,
+  defaultAddress: false,
+  location: {
+    type: 'Point',
+    coordinates: [234,89]
+  }
 };
 
 const THIRD_ADDRESS: _ADDRESS = {
@@ -38,7 +46,11 @@ const THIRD_ADDRESS: _ADDRESS = {
   city: 'Kasol',
   state: 'Himachal Pradesh',
   pinCode: 175155,
-  defaultaddress: false,
+  defaultAddress: false,
+  location: {
+    type: 'Point',
+    coordinates: [122,90]
+  }
 };
 
 export const USER: _USER = {
