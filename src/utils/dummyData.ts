@@ -1,4 +1,4 @@
-import { _CART_ITEM, _MEDICINE } from '@/types';
+import { _CART_ITEM, _MEDICINE, _ORDER } from '@/types';
 
 export const MEDICINE: _MEDICINE = {
   id: 123,
@@ -15,4 +15,11 @@ export const CART_ITEM: _CART_ITEM = {
   name: 'Pure Vitamin-C Serum',
   count: 2,
   price: 988,
+};
+
+export const ORDER: _ORDER = {
+  order_id: '1234567o',
+  date: '12-04-2024',
+  amount: 1234.56,
+  status: 'Out for Delivery',
 };

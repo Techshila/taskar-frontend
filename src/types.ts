@@ -38,3 +38,10 @@ export type _LOCATION = {
   latitude: null | number;
   longitude: null | number;
 };
+
+export type _ORDER = {
+  order_id: string;
+  date: string;
+  amount: number;
+  status: string;
+};
